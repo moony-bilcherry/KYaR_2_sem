@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>задание 2</title>
+            <style>
+            
+            </style>
+            <script type="text/javascript">
+                try {
+                    function language(name, developer, first_appereance){
+                    this.Name = name;
+                    this.Developer = developer;
+                    this.Appereance = first_appereance;
+                    this.Age = function (){
+                        let today = new Date();
+                        return(today.getFullYear() - this.Appereance);
+                    }
+                }
+                B = new language('B','Кен Томпсон',1969)
+                C = new language('C', 'Деннис Ритчи', 1972);
+                Cpp = new language('C++', 'Бьерн Страуструп', 1983);
+                Python = new language('Python', 'Гвидо ван Россум', 1991);
+                Ada = new language('Ada','Жан ишбиа',1980);
+                language.prototype.lastversion = this.lastversion;
+                C.lastversion = 'C18';
+                Cpp.lastversion = 'C++17';
+                Python.lastversion = '3.6.10';
+                Ada.lastversion = 'Ada 2012';
+                B.lastversion = 'Honeywell';
+                document.write("ЯП / Разработчик / Появился в / Последняя версия: <br>")
+                document.write(B.Name+" "+B.Developer+" "+B.Appereance+" "+B.lastversion+"<br>");
+                document.write(C.Name+" "+C.Developer+" "+C.Appereance+" "+C.lastversion+"<br>");
+                document.write(Cpp.Name+" "+Cpp.Developer+" "+Cpp.Appereance+" "+Cpp.lastversion+"<br>");
+                document.write(Python.Name+" "+Python.Developer+" "+Python.Appereance+" "+Python.lastversion+"<br>");
+                document.write(Ada.Name+" "+Ada.Developer+" "+Ada.Appereance+" "+Ada.lastversion+"<br>");
+                
+                } catch(err) {
+                    alert(err);
+                }
+            </script>
+    </head>
+    <body>
+
+    </body>
+</html>

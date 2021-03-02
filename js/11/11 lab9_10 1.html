@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>11 (9_10 ex1 + jq)</title>
+    <meta charset="utf-8">
+    <style>
+    .draggable {
+        position: absolute;
+        cursor: move;
+        user-select: none;
+    }
+    </style>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  
+</head>
+<body>
+    <textarea class="draggable">aaaaaaaaaaaaaaaaaaaaaa</textarea>
+    <img src="dev.jpg" class="draggable">
+    <script>
+        var dragging = null;
+        $(document).ready(function() {
+            $('.draggable').on({
+                mousedown: function() { 
+                    dragging = $(this); 
+                    $('html').addClass('cursormove'); 
+                },
+                mouseup: function () { 
+                    dragging = null; 
+                    $('html').removeClass('cursormove'); 
+                }
+            });
+            $(document).mousemove(function (e) {
+                if (dragging) {
+                    var TheLeft = e.pageX;
+                    var TheTop = e.pageY;
+                    dragging.css({'top': TheTop, 'left': TheLeft });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

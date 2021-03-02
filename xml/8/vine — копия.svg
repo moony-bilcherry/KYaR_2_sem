@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#000000;stroke-miterlimit:10;}
+	.st2{fill:wheat; fill-opacity:0.4;}
+	.st3{fill:teal;}
+</style>
+	<defs>
+		<filter id="f3" x="0" y="0" width="200%" height="200%">
+			<feOffset result="offOut" in="SourceAlpha" dx="40" dy="20" />
+			<feGaussianBlur result="blurOut" in="offOut" stdDeviation="10" />
+			<feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+		</filter>
+		<path id="glass" class="st2" d="M274,118.75c0-4.94-21.74-8.94-48.55-8.94s-48.55,4-48.55,8.94l-15.51,43.58l0,0
+			c-2.81,7.48-4.35,15.59-4.35,24.05c0,31.16,20.83,57.45,49.32,65.71l0.05-0.17c7.62,3.22,12.97,10.77,12.97,19.57v89.49
+			c0,27-21.26,48.88-48.25,48.88l0,0c-6.55,0-10.49,3.2-14.23,8.01l0.14,0.11h68.41c0,0,68.41,0,68.41,0l0.14-0.11
+			c-3.73-4.8-7.04-8-13.6-8l0,0c-27,0-48.88-21.89-48.88-48.88v-89.49c0-8.8,5.35-16.34,12.97-19.57l0.05,0.17
+			c28.49-8.26,49.32-34.55,49.32-65.71c0-8.46-1.54-16.57-4.35-24.05l0,0L274,118.75z"/>
+	</defs>
+	<use xlink:href="#glass" filter="url(#f3)"/>
+	<path class="st0" d="M221.99,441.04"/>
+	<path class="st3" d="M285.1,186.1c0,33.42-27.09,60.51-60.51,60.51s-60.51-27.09-60.51-60.51c0-14.63,5.19-28.05,13.84-38.51
+	c4.62,2.02,11.82,4.6,20.85,5.43c12.6,1.14,20.83-1.86,33.6-4.29c8.55-1.63,21.12-3.38,37.05-3.25
+	C273.05,149.48,285.1,156.39,285.1,186.1z"/>
+</svg>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>меню</title>
+	<style>
+		html {
+			background-image: url('trip1.jpg');
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+        body { 
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 14pt;
+            margin: 0;
+			padding: 0;
+			text-align: center
+			
+		} 
+		#wrap {
+			width: 1100px;
+			height: 40px;
+			background-color: rgb(60, 31, 80);
+			margin: 0 auto;
+			margin-top: 50px;
+		}
+		nav ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			
+		}
+		nav li {
+			display: inline-block;
+			
+			width: 170px;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+			background-color: rgb(60, 31, 80);
+			position: relative;
+		}
+		nav li a {
+			height: 100%;
+			width: 100%;
+			display: block;
+			color: white;
+			text-decoration: none;
+		}
+		nav li a:hover {
+			background-color: rgb(93, 56, 119);
+		}
+		nav ul.sub {
+			position: absolute;
+			display: none;
+			font-size: 12pt;
+		}
+		nav ul.sub li ul.sub {
+			top: 0;
+			left: 170px;
+		}
+		nav ul.sub li {
+			background-color: thistle;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script>
+		$(function () {
+			$('.main li').hover(
+				function () {
+					$('>ul.sub:not(:animated)', this).slideDown(300);
+				},
+				function () {
+					$('>ul.sub', this).slideUp(100);
+				}
+			);
+		});
+	</script>
+</head>
+
+<body>
+	<div id="wrap">
+	<nav>
+        <ul class="main">
+			<li>
+				<a href="#">Повторение</a>
+				<ul class="sub">
+        			<li><a href="repeat/chess.html">шашки</a></li>
+					<li><a href="repeat/maket_flex.html">макет</a></li>
+					<li><a href="repeat/menu.html">меню</a></li>
+					<li><a href="repeat/test_anim.html">анимации</a></li>
+        		</ul>
+			</li>
+			
+        	<li><a href="#">JavaScript</a>
+        		<ul class="sub">
+					<li>
+						<a href="#">лаба 1</a>
+						<ul class="sub"> 
+        					<li><a href="js/1/ex1.html">задание 1</a></li>
+        					<li><a href="js/1/ex2.html">задание 2</a></li>
+							<li><a href="js/1/ex3.html">задание 3</a></li>
+							<li><a href="js/1/ex4.html">задание 4</a></li>
+							<li><a href="js/1/ex5.html">задание 5</a></li>
+							<li><a href="js/1/ex6.html">задание 6</a></li>
+							<li><a href="js/1/ex7.html">задание 7</a></li>
+        				</ul>
+					</li>
+					<li>
+						<a href="#">лаба 2</a>
+						<ul class="sub">
+        					<li><a href="js/2/2_ex1.html">задание 1</a></li>
+        					<li><a href="js/2/2_ex2.html">задание 2</a></li>
+							<li><a href="js/2/2_ex3.html">задание 3</a></li>
+							<li><a href="js/2/2_ex4.html">задание 4</a></li>
+        				</ul>
+					</li>
+					<li>
+						<a href="#">лаба 3</a>
+						<ul class="sub">
+        					<li><a href="js/3/3_ex1.html">задание 1</a></li>
+        					<li><a href="js/3/3_ex2.html">задание 2</a></li>
+							<li><a href="js/3/3_ex3.html">задание 3</a></li>
+							<li><a href="js/3/3_ex4.html">задание 4</a></li>
+        				</ul>
+					</li>
+					<li>
+						<a href="#">лаба 4</a>
+						<ul class="sub">
+        					<li><a href="js/4/4_ex1.html">задание 1</a></li>
+        					<li><a href="js/4/4_ex2.html">задание 2</a></li>
+							<li><a href="js/4/4_ex3.html">задание 3</a></li>
+        				</ul>
+					</li>
+					<li><a href="js/5/lab_5.html">лаба 5</a></li>
+					<li><a href="js/6/lab_6.html">лаба 6</a></li>
+					<li>
+						<a href="#">лаба 7</a>
+						<ul class="sub">
+        					<li><a href="js/7/7.html">задания 1-3</a></li>
+							<li><a href="js/7/7_4.html">задание 4</a></li>
+        				</ul>
+					</li>
+					<li><a href="js/8/8.html">лаба 8</a></li>
+					<li>
+						<a href="#">лаба 9-10</a>
+						<ul class="sub">
+        					<li><a href="js/9_10/9_10 ex1.html">задание 1</a></li>
+        					<li><a href="js/9_10/9_10 ex2.html">задание 2</a></li>
+							<li><a href="js/9_10/9_10 ex3.html">задание 3</a></li>
+							<li><a href="js/9_10/9_10 4_5 v2.html">задания 4-5</a></li>
+							<li><a href="js/9_10/9_10 ex6.html">задание 6</a></li>
+        				</ul>
+					</li>
+					<li>
+						<a href="#">лаба 11</a>
+						<ul class="sub">
+        					<li><a href="js/11/11 lab8.html">задание 8(1)</a></li>
+        					<li><a href="js/11/11 lab9_10 1.html">задание 9-10(1)</a></li>
+							<li><a href="js/11/11 lab9_10 2.html">задание 9-10(2)</a></li>
+							<li><a href="js/11/11 lab9_10 3.html">задание 9-10(3)</a></li>
+							<li><a href="js/11/11 lab9_10 4_5.html">задание 9-10(4-5)</a></li>
+							<li><a href="js/11/11 lab9_10 6.html">задание 9-10(6)</a></li>
+        				</ul>
+					</li>
+        		</ul>
+            </li>
+            
+        	<li><a href="#">XML</a>
+        		<ul class="sub">
+					<li><a href="xml/1/lab_1.xml">лаба 1</a></li>
+					<li>
+						<a href="#">лаба 2</a>
+						<ul class="sub">
+        					<li><a href="xml/2/lab2 with dtd.xml">dtd</a></li>
+							<li><a href="xml/2/lab2 with scheme.xml">scheme</a></li>
+        				</ul>
+					</li>
+					<li><a href="xml/3/lab_1.xml">лаба 3</a></li>
+					<li><a href="xml/4/lab_4.xml">лаба 4</a></li>
+					<li><a href="xml/5/lab_5.html">лаба 5</a></li>
+					<li>
+						<a href="#">лаба 6</a>
+						<ul class="sub">
+        					<li><a href="xml/6/lab_6 ex1_3.html">задания 1-3</a></li>
+							<li><a href="xml/6/lab_6 ex 4_5.html">задание 4-5</a></li>
+        				</ul>
+					</li>
+					<li>
+						<a href="#">лаба 7</a>
+						<ul class="sub">
+        					<li><a href="xml/7/lab7_ex1.html">задания 1-2</a></li>
+							<li><a href="xml/7/lab7_ex3_5.html">задание 3-5</a></li>
+        				</ul>
+					</li>
+					<li>
+						<a href="#">лаба 8</a>
+						<ul class="sub">
+        					<li><a href="xml/8/lab8_ex1.html">задание 1</a></li>
+							<li><a href="xml/8/basic_shapes.svg">задание 2.1.1</a></li>
+							<li><a href="xml/8/basic_shapes — копия.svg">задание 2.1.2</a></li>
+							<li><a href="xml/8/le_text2.svg">задание 2.2.1</a></li>
+							<li><a href="xml/8/le_text2 — копия.svg">задание 2.2.2</a></li>
+							<li><a href="xml/8/vine.svg">задание 2.3.1</a></li>
+							<li><a href="xml/8/vine — копия.svg">задание 2.3.2</a></li>
+        				</ul>
+					</li>
+        		</ul>
+            </li>
+            
+        	<li><a href="#">HTML 5</a>
+        		<ul class="sub">
+        			<li><a href="html5/1/lab_1.html">лаба 1</a></li>
+					<li><a href="html5/2/lab_2.html">лаба 2</a></li>
+					<li><a href="html5/3/lab_3.html">лаба 3</a></li>
+        		</ul>
+        	</li>
+        </ul>
+	</nav>
+</div>
+
+</body>
+
+</html>

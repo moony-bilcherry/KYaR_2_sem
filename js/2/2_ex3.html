@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>задание 3</title>
+        <style>
+            table,td {
+                border: 2px solid #777;
+                text-align: center;
+            }
+            td {
+                width: 15px;
+                padding: 5px;
+                text-align: center;
+                border-radius: 4px;
+            }
+            table tr:nth-child(1n) td:first-child, table tr:first-child td:nth-child(1n) {
+                background-color: rgb(211, 162, 226);
+            }
+            </style>
+        <script type="text/javascript">
+            /*Найти площадь круга и длину окружности, радиус меняется от а до b с шагом 0,3. Результаты округлить и вывести в таблице. Исполь-зовать оператор цикла do-while.*/
+            var tab  = '<table>\n';
+            tab += '<tr>\n';
+            a=parseInt(prompt("Введите первое число:", "a"));
+            b=parseInt(prompt("Введите второе:", "b"));
+            tab += '<td>Радиус</td><td>Площадь круга</td><td>Длина окружности</td></tr>';
+            do {
+                tab += '<tr>\n';
+                tab += '<td>' + a.toFixed(1) + '</td>' + '<td>' + (a*a*Math.PI).toFixed(1) + '</td>' + '<td>' + (2*Math.PI*a).toFixed(1) + '</td></tr>\n';
+                a += 0.3;
+            } while(a<=b);
+            tab += '</table>';
+            document.write(tab);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

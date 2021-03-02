@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>задание 4</title>
+            <style>
+            body {
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            }
+            table,td {
+                border: 2px solid #777;
+                text-align: center;
+            }
+            td {
+                width: 15px;
+                padding: 10px 20px;
+                text-align: center;
+                border-radius: 4px;
+            }
+            table tr:first-child td:nth-child(1n) {
+                background-color: rgb(21, 116, 103);
+                color: whitesmoke;
+                font-weight: bolder;
+            }
+            </style>
+            <script type="text/javascript">
+                today = new Date();
+                document.write(today+"<br>");
+                var tab  = '<table>\n';
+                tab += '<tr>\n';
+                tab += '<td>год</td><td>'+today.getFullYear()+'</td></tr>\n';
+                tab += '<td>месяц</td><td>'+(1+today.getMonth())+'</td></tr>\n';
+                tab += '<td>день</td><td>'+today.getDate()+'</td></tr>\n';
+                tab += '<td>час</td><td>'+today.getHours()+'</td></tr>\n';
+                tab += '<td>минуты</td><td>'+today.getMinutes()+'</td></tr>\n';
+                tab += '<td>секунды</td><td>'+today.getSeconds()+'</td></tr>\n';
+                tab += '</table>';
+                document.write(tab);
+            </script>
+    </head>
+    <body>
+    </body>
+</html>

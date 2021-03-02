@@ -1,0 +1,42 @@
+university { 
+    display:block;
+    text-align:center;
+    margin:10px;
+    border-style:double;
+    border-color:#8C0088;
+    font-size:16pt;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+uniName { 
+    font-style:italic;
+    text-align:center;
+}
+
+passingScore {
+    display:block;
+    text-align:center;
+    font-weight:bold;
+    border-top:double;
+    border-color:#8C0088;
+}
+
+recruitmentPlan {
+    display:block;
+    text-align:center;
+    border-top:double;
+    border-color:#8C0088;
+}
+
+city {
+    display:block;
+    text-align:center;
+    border-top:double;
+    border-color:#8C0088;
+}
+
+speciality { 
+    display:block;
+    margin:50px 100px;
+    border-style:solid;
+}

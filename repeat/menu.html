@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>меню</title>
+        <style>
+            ul {
+            padding: 0;
+            }
+            li {
+                display: inline-block; /*элементы расположены горизонтально*/
+                padding: 5px;; /*+отступ у пунктов меню*/
+            }
+            a {
+                text-decoration: none; /*чтобы ссылки не подчеркивались*/
+                color: black;
+            }
+            a:hover {
+                color: red; /*ссылки при наведении становятся красными*/
+            }
+            li+li {
+                border-left: red 2px solid;
+            }
+
+            td {
+            padding: 5px;
+            }
+
+            td+td {
+                border: none;
+                border-left: red 2px solid;
+            }
+
+            ul {
+                padding: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <p>меню через список:</p>
+        <div>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=gsNaR6FRuO0">Первая ссылка</a></li>
+                <li><a href="https://www.youtube.com/watch?v=jANE8lpoj2c">Вторая ссылка</a ></li>
+                <li><a href="https://www.youtube.com/watch?v=BEpMPU2jq5U">Треться ссылка</a></li>
+                <li><a href="https://www.youtube.com/watch?v=0v1uj9lzQyQ">Четвертая ссылка</a></li>
+                <li><a href="https://www.youtube.com/watch?v=gsNaR6FRuO0">Пятая ссылка</a></li>
+            </ul>
+        </div>
+        <p>меню через таблицу</p>
+        <div>
+            <table>
+                <tr>
+                    <td><a href="https://www.youtube.com/watch?v=gsNaR6FRuO0">Первая ссылка</a></td>
+                    <td><a href="https://www.youtube.com/watch?v=jANE8lpoj2c">Вторая ссылка</a></td>
+                    <td><a href="https://www.youtube.com/watch?v=BEpMPU2jq5U">Третья ссылка</a></td>
+                    <td><a href="https://www.youtube.com/watch?v=0v1uj9lzQyQ">Четвертая ссылка</a></td>
+                    <td><a href="https://www.youtube.com/watch?v=gsNaR6FRuO0">Пятая ссылка</a></td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

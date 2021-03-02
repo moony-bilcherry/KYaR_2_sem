@@ -1,0 +1,123 @@
+<html>
+    <head>
+        <title>Графики</title>
+        <style type="text/css">
+        fieldset {
+        width: 300px;
+        background-color: teal;
+        color: whitesmoke;
+        }
+
+        label {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 18px;
+        }
+
+        div{
+        position: fixed;
+        }
+
+        </style>
+    </head>
+
+    <body>
+        <form>
+            <fieldset>
+            <label>График:</label><br/>
+            <input type = 'radio' name = 's' value = '1' /> y = x<sup>2</sup><br/>
+            <input type = 'radio' name = 's' value = '2' /> y = x<sup>3</sup><br/>
+            <input type = 'radio' name = 's' value = '3' /> y = sin(x)<br/>
+            <input type = 'radio' name = 's' value = '4' /> y = cos(x)<br/><br/>
+            <label>Цвет графика: </label>
+                <select name = "choice">
+                    <option value = '1'>Черный</option>
+                    <option value = '2'>Красный</option>
+                    <option value = '3'>Оранжевый</option>
+                    <option value = '4'>Желтый</option>
+                    <option value = '5'>Зеленый</option>
+                    <option value = '6'>Синий</option>
+                    <option value = '7'>Фиолетовый</option>
+                </select>
+               <br/><br/><input id = "button" type = "button" value = "Построить" onclick = "build()">
+            </fieldset>
+        </form>
+        <p></p>
+        <script type="text/javascript">
+            function build() {
+            var f = document.forms[0].s.value;
+            if (f == 1) f1();
+            if (f == 2) f2();
+            if (f == 3) f3();
+            if (f == 4) f4();
+            }
+        
+            function color(str) {
+            var color = document.forms[0].choice.value;
+            if(color == 1) str += ("<font color = black>");
+            if(color == 2) str += ("<font color = red>");
+            if(color == 3) str += ("<font color = orange>");
+            if(color == 4) str += ("<font color = yellow>");
+            if(color == 5) str += ("<font color = green>");
+            if(color == 6) str += ("<font color = blue>");
+            if(color == 7) str += ("<font color = purple>");
+            return str;
+            }
+        
+            var w , h, x0, y0;
+            w = screen.width;
+            h = screen.height;
+            x0 = w/2; 
+            y0 = h/2; 
+        
+            var str;
+        
+            function f1() {
+                str = "";
+                str += color(str);
+                for ( x = -2; x < 2; x += 0.002) {
+                    y = x * x;     
+                    str += ("<div style = 'left: " + (x0 + 80 * x) + "; top: " + (y0 - 100 * y + 100) + " '>.</div>");     
+                }
+                str += ("</font>")
+                document.getElementsByTagName('p')[0].innerHTML = str;
+            }
+        
+            function f2() {
+        
+                str = "";
+                str += color(str);
+                for ( x = -2; x < 2; x += 0.002) {  
+                    y = x * x * x;     
+                    str += ("<div style = 'left: " + (x0 + 30 * x) + "; top: " + (y0 - 50 - 30 * y + 20) + " '>.</div>");     
+                }   
+                str += ("</font>")
+                document.getElementsByTagName('p')[0].innerHTML = str;
+            }
+        
+            function f3() {
+                str = "";
+                str += color(str);
+                for ( x = -10; x < 10; x += 0.002) {  
+                    y = Math.sin(x);     
+                    str += ("<div style = 'left: " + (x0 + 50 * x) + "; top: " + (y0 - 50 * y + 20) + " '>.</div>");     
+                }   
+                str += ("</font>")
+                document.getElementsByTagName('p')[0].innerHTML = str;
+            }
+        
+        
+            function f4() {
+                
+                str = "";
+                str += color(str);
+                for ( x = -10; x < 10; x += 0.002) {  
+                    y = Math.cos(x);     
+                    str += ("<div style = 'left: " + (x0 + 50 * x) + "; top: " + (y0 - 50 * y + 20) + " '>.</div>");     
+                }   
+                str += ("</font>")
+                document.getElementsByTagName('p')[0].innerHTML = str;
+            }
+            
+        </script>
+    </body>
+</html>

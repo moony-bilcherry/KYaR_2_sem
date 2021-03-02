@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>11 (9-10 ex 6 + jq)</title>
+        <style>
+            body{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            #nav {
+                border-radius: 6px;
+                background-color: rgb(63, 60, 146);
+                font-size: 16pt;
+            }
+            .menu-item {
+                padding: 5px;
+                width: 135px;
+                text-align: center;
+                padding: 2px;
+                color: white;
+                display: inline-block;
+                position: relative;
+                cursor: pointer;
+            }
+            .menu-item:hover {
+                background-color: rgb(30, 29, 59);
+            }
+            .menu-item .submenu{
+                height: fit-content;
+                width: inherit;
+                background: rgb(204, 34, 162);
+                display: none;
+                position: absolute;
+            }
+        </style>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+    </head>
+    <body>
+        <div id="nav">
+            <div class="menu-item">
+                Меню 1
+                <div class="submenu">
+                    Подменю
+                </div>
+            </div>
+            <div class="menu-item">
+                Меню 2
+                <div class="submenu">
+                    Подменю
+                </div>
+            </div>
+            <div class="menu-item">
+                Меню 3
+                <div class="submenu">
+                    Подменю
+                </div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function(){
+                $(".menu-item").hover(function(){
+                    $(this).children(".submenu").stop(true,false,true).fadeToggle(400);
+                })
+            })
+        </script>
+    </body>
+</html>

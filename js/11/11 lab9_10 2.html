@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>11 (9-10 ex 2 + jq)</title>
+        <meta charset="utf-8">
+        <style>
+            #pic {
+                position: absolute;
+            }
+        </style>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  
+    </head>
+    <body>
+        <img id="pic" src="dev.jpg">
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#pic").animate({left:800},4000);
+            })
+        </script>
+    </body>
+</html>

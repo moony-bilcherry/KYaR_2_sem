@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>задание 1</title>
+            <style>
+            
+            </style>
+            <script type="text/javascript">
+                equas = new Array();
+                equas[0]=6*Math.pow(Math.PI,2)+3*Math.pow(Math.E,8);
+                equas[1]=2*Math.cos(4)+Math.cos(12)+8*Math.pow(Math.E,3);
+                equas[2]=3*Math.sin(9)+Math.log(5)+Math.sqrt(3);
+                equas[3]=2*Math.tan(5)+6*Math.PI+Math.sqrt(12);
+                document.write("массив: <br>");
+                for(i = 0; i<equas.length; i++) {
+                    document.write(equas[i]+"<br>");
+                }
+                max=equas[0]; min=equas[0]; id_max=0; id_min=0;
+                for(i = 1; i<equas.length; i++) {
+                    if(equas[i]>max) {
+                        max=equas[i];
+                        id_max=i;
+                    }
+                }
+                for(i = 1; i<equas.length; i++) {
+                    if(equas[i]<min) {
+                        min=equas[i];
+                        id_min=i;
+                    }
+                }
+                document.write("максимальный элемент массива - "+max+", его номер в массиве - "+id_max+"<br>");
+                document.write("минимальный элемент массива - "+min+", его номер в массиве - "+id_min+"<br>");
+            </script>
+    </head>
+    <body>
+    </body>
+</html>

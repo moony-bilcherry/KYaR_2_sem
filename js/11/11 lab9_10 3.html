@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>11 (9-10 ex 3 + jq)</title>
+        <meta charset="utf-8">
+        <style>
+            #pic {
+                position: absolute;
+            }
+        </style>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  
+    </head>
+    <body>
+        <img id="pic" src="dev.jpg">
+        <script type="text/javascript">
+            $(document).ready(function(){
+                animDuration = 5000;
+                $("#pic").animate({
+                    "left": "1000px" // закончится когда отступ слева будет равен 1000пкс
+                },{ 
+                    duration:animDuration, // длительность анимации
+                    step: function(now, fx) { // функция степ вызывается на каждом шагу, т.е. как цикл
+                        $(this).offset({top: Math.sin(now/80)*200+200}); // в скобках функция по которой двигается картинка по y
+                    }
+                }).animate({
+                    "left": "0px"
+                },{ 
+                    duration:animDuration,
+                    step: function(now, fx) {
+                        $(this).offset({top: Math.sin(now/80)*200+200});        
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

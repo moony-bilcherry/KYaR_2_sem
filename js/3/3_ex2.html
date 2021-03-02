@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>задание 2</title>
+            <style>
+            
+            </style>
+            <script type="text/javascript">
+                /*Задан массив с элементами, представляющими методы объектов Array и Math (pow, pop, push, shift, round, floor, slice, sort). Получить из него 2 массива, в один записать методы объекта Array, в другой – методы объекта Math.*/
+                arr = new Array("pow","pop","push","shift","round","floor","slice","sort");
+                document.write("первоначальный массив: <br>");
+                for(i = 0; i<arr.length; i++) {
+                    document.write(arr[i]+" ");
+                }
+                arr_meth = arr.slice(1,4);
+                arr_meth.push(arr[6],arr[7]);
+                arr_meth.push("concat");
+                document.write("<br>массив методов объекта array: ");
+                for(i = 0; i<arr_meth.length; i++) {
+                    document.write(arr_meth[i]+" ");
+                }
+                document.write(", его длина: ", arr_meth.length);
+                math_meth = arr.slice(4,6);
+                math_meth.push(arr[0]);
+                math_meth.unshift("log");
+                document.write("<br>массив методов объекта math: ");
+                for(i = 0; i<math_meth.length; i++) {
+                    document.write(math_meth[i]+" ");
+                }
+                document.write(", его длина: ", math_meth.length);
+            </script>
+    </head>
+    <body>
+    </body>
+</html>

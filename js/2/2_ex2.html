@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>задание 2</title>
+        <style>
+            table,td {
+                border: 2px solid #777;
+                text-align: center;
+            }
+            td {
+                width: 15px;
+                padding: 5px 10px;
+                text-align: center;
+                border-radius: 4px;
+            }
+            table tr:nth-child(1n) td:first-child, table tr:first-child td:nth-child(1n) {
+                background-color: rgb(211, 162, 226);
+            }
+            </style>
+        <script type="text/javascript">
+            var cd  = '<table>\n';
+            num1=prompt("Введите первое число:", "x");
+            num2=prompt("Введите второе:", "y");
+            cd += '<tr>\n';
+            cd += '<td> </td>'
+            for (var i = 1; i <= num1; i++) 
+                cd += '<td>' + i + '</td>\n';
+            cd += '</tr>'
+            for (i = 1; i <= num2; i++) {
+                cd += '<tr>\n';
+                cd += '<td>' + i + '</td>\n';
+                for (var j = 1; j <= num1; j++) cd += '<td>' + (i * j) + '</td>\n';
+                cd += '</tr>\n';
+            }
+            cd += '</table>';
+            document.write(cd);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

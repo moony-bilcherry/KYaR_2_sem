@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>9-10 ex 6</title>
+        <style>
+            .menu-item {
+                width: 135px;
+                text-align: center;
+                padding: 2px;
+                border-radius: 3px;
+                background-color: rgb(30, 29, 59);
+                color: white;
+                display: inline-block;
+                position: relative;
+                cursor: pointer;
+            }
+            .menu-item .submenu{
+                margin-top: 4px;
+                height: 30px;
+                width: 135px;
+                background: rgb(204, 34, 162);
+                display: none;
+                position: absolute;
+                cursor: pointer;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="nav">
+            <div class="menu-item">
+                Меню 1
+                <div class="submenu">
+                    Подменю
+                </div>
+            </div>
+            <div class="menu-item">
+                Меню 2
+                <div class="submenu">
+                    Подменю
+                </div>
+            </div>
+            <div class="menu-item">
+                Меню 3
+                <div class="submenu">
+                    Подменю
+                </div>
+            </div>
+        </div>
+        <script>
+            document.getElementById('nav').onmouseover= function(event) {
+                //отслеживает нахождение мыши внутри блока
+                var target = event.target; //target указывает на элемент, на котором было вызвано событие
+                if (target.className == 'menu-item') {
+                    var s=target.getElementsByClassName('submenu');
+                    closeMenu();
+                    s[0].style.display='block'; //массив, содержащий ложное меню
+                }
+            }
+
+            document.onmousemove=function(event) {
+                var target = event.target;
+                if (target.className!='menu-item' && target.className!='submenu') {
+                    closeMenu();
+                }
+            }
+            
+            function closeMenu() {
+                //получение всех элементов подменю в блоке nav, присваивание display:none
+                var menu=document.getElementById('nav');
+                var subm=document.getElementsByClassName('submenu');
+                for (var i=0; i<subm.length; i++) {
+                    subm[i].style.display="none";
+                }
+            }
+        </script>
+    </body>
+</html>

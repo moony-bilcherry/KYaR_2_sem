@@ -1,0 +1,40 @@
+<HTML>
+
+    <IMG ID = "myimg" SRC = "dev.jpg" STYLE = "position:absolute; top:300px; left:300px;">
+    
+    <SCRIPT>
+    var A1, A2;
+    function curvemove(xid, yexpr, xexpr, ztime) {
+    if (!xid) return null
+    if (!ztime) ztime = 100;
+    x = 0;
+    A1 = setInterval(move,ztime,xid,yexpr,xexpr)
+    }
+    function move(xid, yexpr, xexpr) {	
+        if(x>300) {
+            clearInterval(A1);
+            A2 = setInterval(move_back, 8, xid, yexpr, xexpr)
+        }
+        else {
+            x++
+        document.all[xid].style.top = eval(yexpr)
+        document.all[xid].style.left = eval(xexpr)
+        }
+    }
+    function move_back(xid, yexpr, xexpr) {
+        if(x<0) {
+            clearInterval(A2);
+        }
+        else {
+            x--
+        document.all[xid].style.top = eval(yexpr)
+        document.all[xid].style.left = eval(xexpr)
+        }
+    }
+
+    curvemove('myimg', "Math.sin(0.05*x)*60+x" , "x+200", 8)
+    
+    </SCRIPT>
+    </HTML>
+    
+    

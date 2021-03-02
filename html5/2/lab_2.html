@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>html5 lab 2</title>
+        <meta charset="utf-8"/>
+        <style>
+            body {
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            }
+            canvas {
+                background: rgb(203, 192, 214);
+                border: 3px solid rgb(0, 0, 0);
+                display: inline-block;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="canv1" width="520" height ="470"></canvas>
+        <canvas id="canv2" width="520" height ="470"></canvas>
+        <script>
+            var myCanvas1 = document.getElementById("canv1");
+            var A = myCanvas1.getContext("2d");
+            
+            A.font = "16pt Verdana";                            //шрифт
+            
+            A.lineWidth = 1;
+            for (let i = 400; i >= 60; i-=60) {                 //разметка
+                A.beginPath();
+                A.moveTo(80,i);
+                A.lineTo(470,i);
+                A.stroke();
+            }
+            A.fillStyle = "black";
+            var x = 0;
+            for (i = 405; i >= 60; i-=60) {                     //значения разметки
+                A.fillText(x, 50, i);
+                x += 2;
+            }
+
+            A.fillStyle = 'gold';                               //столбцы
+            A.fillRect(130, 280, 60, 120);
+            A.fillStyle = 'teal';
+            A.fillRect(240, 70, 60, 330);
+            A.fillStyle = 'crimson';
+            A.fillRect(350, 160, 60, 240);
+
+
+            A.fillStyle='white';
+            A.rotate(-Math.PI/2);
+            A.fillText("количество" , -300, 33);
+
+            A.rotate(Math.PI/2);
+            A.fillText('темы лаб:', 215, 40);
+
+            A.fillText("HTML" , 130, 430);
+            A.fillText("JS", 255, 430);
+            A.fillText("XML", 362, 430);
+
+            A.lineWidth = 3;
+            A.beginPath();
+            A.strokeStyle = "black";                            //цвет контура
+
+            A.moveTo(80,400);                                   //ось х
+            A.lineTo(470,400);
+
+            A.moveTo(80,400);                                   //ось у
+            A.lineTo(80,45);
+
+            A.stroke();
+        
+            //
+
+            let canvas = document.getElementById('canv2');
+            let smth = canvas.getContext('2d');
+            
+            smth.lineWidth = 2;
+            
+            smth.beginPath();
+            smth.arc(200, 250, 150, -Math.PI/180*30, 0, false);
+            smth.lineTo(200, 250);
+            smth.fillStyle = 'crimson';
+            smth.fill();
+            smth.closePath();
+            
+            smth.beginPath();
+            smth.arc(200, 250, 150, -Math.PI/180*90, -Math.PI/180*30, false);
+            smth.lineTo(200, 250);
+            smth.fillStyle = 'teal';
+            smth.fill();
+            smth.closePath();
+            
+            smth.beginPath();
+            smth.arc(200, 250, 150, -Math.PI/180*230, -Math.PI/180*90, false);
+            smth.lineTo(200, 250);
+            smth.fillStyle = 'gold';
+            smth.fill();
+            smth.closePath();
+            
+            smth.beginPath();
+            smth.arc(200, 250, 150, -Math.PI/180*340, -Math.PI/180*230, false);
+            smth.lineTo(200, 250);
+            smth.fillStyle = 'indigo';
+            smth.fill();
+            smth.closePath();
+            
+            smth.beginPath();
+            smth.arc(200, 250, 150, -Math.PI/180*360, -Math.PI/180*340, false);
+            smth.lineTo(200, 250);
+            smth.fillStyle = 'Aquamarine';
+            smth.fill();
+            smth.closePath();
+            
+            smth.fillStyle='crimson';
+            smth.fillRect(400,140,20,20);
+            smth.fillStyle='teal';
+            smth.fillRect(400,175,20,20);
+            smth.fillStyle='indigo';
+            smth.fillRect(400,210,20,20);
+            smth.fillStyle='gold';
+            smth.fillRect(400,245,20,20);
+            smth.fillStyle='Aquamarine';
+            smth.fillRect(400,280,20,20);
+
+            smth.font = "16pt Verdana";
+            smth.fillStyle='white';
+
+            smth.fillText('бессмысленная диаграмма', 100, 40);
+            smth.fillText('кто', 430, 155);
+            smth.fillText('каво', 430, 190);
+            smth.fillText('зачем', 430, 225);
+            smth.fillText('кому', 430, 260);
+            smth.fillText('что', 430, 295);
+        </script>
+    </body>
+</html>

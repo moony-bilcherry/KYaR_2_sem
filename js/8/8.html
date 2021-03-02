@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>лаба 8</title>
+        <meta charset="utf-8">
+        <style>
+            img {
+                max-width: 600px;
+                max-height: 500px;
+            }
+        </style>
+        
+    </head>
+    <body>
+        <h2>задание 1</h2>
+        <div>
+            <p>(при наведении курсора на текст ниже меняется его цвет)</p>
+            <p id="ex1" onmouseover="change_color()">Т Е К С Т</p>
+        </div>
+        <h2>задание 2</h2>
+        <div>
+            <p>(при клике на текст ниже изменяется размер его шрифта)</p>
+            <p id="ex2" onclick="change_txt_size()">еще Т Е К С Т</p>
+        </div>
+        <h2>задание 3</h2>
+        <div >
+            <p>(изображение меняется по клику)</p>
+            <img id="ex3" src="demons.jpg" onclick="change_img()">
+        </div>
+        <h2>задание 4</h2>
+        <div>
+            <p>(текст меняется на изображение по клику)</p>
+            <p id="ex4" onclick="text_to_img()">тоже Т Е К С Т</p>
+        </div>
+        <h2>задание 5</h2>
+        <div>
+            <p>(увеличивается при наведении курсора и уменьшается до первоначального размера)</p>
+            <img id="ex5" src="racoon.jpg" style="width: 30%; height: 30%;" onmouseover="enlarge_img()" onmouseout="decrease_img()">
+        </div>
+        <script type="text/javascript">
+            function change_color() {
+                var xid=event.srcElement.id;
+                document.getElementById(xid).style.color = "rgb(0, 162, 255)";
+            }
+
+            function change_txt_size() {
+                var xid=event.srcElement.id;
+                document.getElementById(xid).style.fontSize = "30pt";
+            }
+
+            function change_img() {
+                var xid=event.srcElement.id;
+                document.getElementById(xid).src = "yane.jpg";
+            }
+
+            function text_to_img() {
+                var xid=event.srcElement.id;
+                document.getElementById(xid).innerHTML = '<img src = "micro.jpg" />';
+            }
+
+            function enlarge_img() {
+                var xid=event.srcElement.id;
+                document.getElementById(xid).style.width = "50%";
+                document.getElementById(xid).style.height = "50%";
+            }
+
+            function decrease_img() {
+                var xid=event.srcElement.id;
+                document.getElementById(xid).style.width = "30%";
+                document.getElementById(xid).style.height = "30%";
+            }
+
+            paragraphs = document.getElementsByTagName("p");
+            for (paragraph of paragraphs) paragraph.ondblclick = function() {
+                this.style.width = "fit-content";
+                this.style.padding = "6px";
+                this.style.border = "3px solid purple";
+                this.style.borderRadius = "6px";
+            }
+           
+        </script>
+    </body>
+</html>

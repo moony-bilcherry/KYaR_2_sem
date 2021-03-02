@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>svg 3 (1 + adds)</title>
+        <link rel="stylesheet" href="myStyle.css"/>
+        <style>
+            body {
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            }
+            svg {
+                border: 3px solid wheat;
+                background-color: rgb(204, 196, 204);
+            }
+            #curvedTxt {
+                font-size: 20pt;
+            }
+            #help {
+                letter-spacing: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <svg class="shapes" width="600" height="600">
+            <defs>
+                <path id="anim_path" d="M-10.74,20.28c165.72,61.9,276.29,49.86,347.25,26.61c29.53-9.68,43.67-18.5,75.9-26.67 C529.42-9.44,638.95,31.8,713.11,71.2" fill="none" stroke="red" transform="translate(0,300) "/>
+                <path id="spiral" fill="none" stroke="red" d="M10,90 Q90,90 90,45 Q90,10 50,10 Q10,10 10,40 Q10,70 45,70 Q70,70 75,50" transform="translate(190,20) scale(1.5)"/>
+                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="10%">
+                    <stop offset="0%" style="stop-color:rgb(243, 47, 184);stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:rgb(73, 53, 185);stop-opacity:1" />
+                </linearGradient>
+                <pattern id="bgimg" patternUnits="userSpaceOnUse" width="500" height="500">
+                    <image xlink:href="pic.jpg" x="0" y="0" width="500" height="500"/>
+                </pattern>
+            </defs>
+
+            <use xlink:href="#spiral"/> 
+            <text>
+                <textPath href="#spiral">
+                доброго утра всем в этом чяте
+                </textPath>
+                <animate begin="click" attributeName="font-size" dur="4s" to="23pt" fill="freeze"/>
+                <animate begin="click" attributeName="fill" dur="4s" values="white;yellow" fill="freeze"/>
+            </text>
+
+            <text id="help" x="100" y="150" transform="rotate(10)">помогите пожалуйста</text>
+            <text x="180" y="250">я так больше <tspan dx="3" dy="5" font-size="16pt" fill="red">не могу</tspan></text>
+
+            <use xlink:href="#anim_path"/> 
+            <text id="curvedTxt">
+                <textPath href="#anim_path" startOffset="-40%">
+                    АААААААААААААААААА
+                    <animate begin="click" attributeName="startOffset"  from="-40%" to="100%" dur="3s"/>
+                </textPath>
+            </text>
+            <text id="imextra" x="140" y="450" font-size="60pt" font-weight="900" fill="url(#grad1)">
+                дезайн
+            </text>
+            <text id="imextra2"x="60" y="550" font-size="60pt" font-weight="900" fill="url(#bgimg)">
+                еще дезайн
+            </text>
+
+
+        </svg> 
+    </body>
+</html> 

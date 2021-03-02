@@ -1,0 +1,40 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<?xml-stylesheet type = "text/xsl" href = "myXSL.xsl"?>
+
+<people>
+    <person>
+        <surname>ясень</surname>
+        <name>волков</name>
+        <lastName>игоревич</lastName>
+        <score>10</score>
+        <bornIn>2002</bornIn>
+    </person>
+    <person>
+        <surname>савочкин</surname>
+        <name>сергей</name>
+        <lastName>александрович</lastName>
+        <score>6</score>
+        <bornIn>1988</bornIn>
+    </person>
+    <person>
+        <surname>кувалдин</surname>
+        <name>егор</name>
+        <lastName>дмитриевич</lastName>
+        <score>3</score>
+        <bornIn>1992</bornIn>
+    </person>
+    <person>
+        <surname>свергун</surname>
+        <name>сергей</name>
+        <lastName>владимирович</lastName>
+        <score>5</score>
+        <bornIn>1987</bornIn>
+    </person>
+    <person>
+        <surname>дмитрий</surname>
+        <name>микалс</name>
+        <lastName>васильевич</lastName>
+        <score>9</score>
+        <bornIn>1999</bornIn>
+    </person>
+</people>

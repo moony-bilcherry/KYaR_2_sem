@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>11 (8+jq)</title>
+        <meta charset="utf-8">
+        <style>
+            img {
+                max-width: 600px;
+                max-height: 500px;
+            }
+        </style>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>  
+    </head>
+    <body>
+        <h2>задание 1</h2>
+        <div>
+            <p>(при наведении курсора на текст ниже меняется его цвет)</p>
+            <p id="ex1">Т Е К С Т</p>
+        </div>
+        <h2>задание 2</h2>
+        <div>
+            <p>(при клике на текст ниже изменяется размер его шрифта)</p>
+            <p id="ex2">еще Т Е К С Т</p>
+        </div>
+        <h2>задание 3</h2>
+        <div >
+            <p>(изображение меняется по клику)</p>
+            <img id="ex3" src="demons.jpg">
+        </div>
+        <h2>задание 4</h2>
+        <div>
+            <p>(текст меняется на изображение по клику)</p>
+            <p id="ex4">тоже Т Е К С Т</p>
+        </div>
+        <h2>задание 5</h2>
+        <div>
+            <p>(увеличивается при наведении курсора и уменьшается до первоначального размера)</p>
+            <img id="ex5" src="racoon.jpg" style="width: 30%; height: 30%;">
+        </div>
+        <script type="text/javascript">
+            
+            $(document).ready(function(){
+                $("#ex1").mouseover(function(){
+                    $(this).css("color","rgb(0, 162, 255)");
+                })
+
+                $("#ex2").click(function(){ 
+                    $(this).css("font-size", "40px");
+                })
+
+                $("[src='demons.jpg']").click(function(){
+                    $(this).attr("src", "yane.jpg");
+                })
+
+                $("#ex4").click(function(){
+                    $(this).replaceWith("<img src='micro.jpg'/>");
+                })
+                
+                $("[src='racoon.jpg']").css("width","20%").mouseover(function(){
+                    $(this).css("width","50%").css("height","50%");
+                }).mouseout(function(){
+                    $(this).css("width","20%").css("height","20%");
+                })
+
+                $("p").dblclick(function(){
+                    $(this).css("width","fit-content").css("padding","6px").css("border","3px solid purple").css("border-radius","6px");
+                })
+            })
+           
+        </script>
+    </body>
+</html>

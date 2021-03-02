@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>лаба 7</title>
+        <meta charset="utf-8">
+            <style>
+                textarea {
+                    width: 110px;
+                    height: 50px;
+                }
+                form {
+                    width: 430px;
+                    margin: auto;
+                }
+            </style>
+            
+    </head>
+    <body>
+        <form name="bstu_student">
+            <fieldset>
+                <legend>Анкета студента БГТУ</legend>
+                <textarea name="faculty">Факультет Информационных Технологий</textarea><br><br>
+                <input type="text" name="surname" value="Фамилия"><br>
+                <input type="text" name="firstname" value="Имя"><br><br>
+                Специальность: <select name="spec">
+                    <option>ПОИТ</option>
+                    <option>ИСиТ</option>
+                    <option>ПОиБМС</option>
+                    <option>ДЭиВИ</option>
+                </select><br><br><br><br><br>
+                Курс: <br>
+                <input type="radio" name="course" value="1">1
+                <input type="radio" name="course" value="2">2
+                <input type="radio" name="course" value="3">3
+                <input type="radio" name="course" value="4">4
+                <br>
+                Предметы: <br>
+                <input type="checkbox" name="subject1">ОИТ
+                <input type="checkbox" name="subject2">ОАИП
+                <input type="checkbox" name="subject3">История
+                <input type="checkbox" name="subject4">Физика
+                <input type="checkbox" name="subject5">Математика
+                <br><br>
+                <input type="submit" name="submit" value="Отправить"><input type="reset" name="reset" value="Очистить">
+                <br><br>
+                <input type="button" name="button" value="Напечатать" onclick="printing()">
+            </fieldset>
+        </form>
+        <script type="text/javascript">
+            function printing() {
+                try {
+                let win1 = open();
+                let info = new String ("<p><u>"+document.forms[0].faculty.innerHTML+"</u></p>");
+                info+= "<p>Студент <u>" + document.forms.bstu_student.elements[2].value + "</u> <u>" + document.forms[0].firstname.value + "</u>";
+                info += " специальность <u>" + document.forms["bstu_student"].spec.value + "</u>";
+                info += " курс <u> " + document.forms[0].course.value + "</u> должен сдавать следующие предметы: </p>";
+                info += "<ul>";
+                if (document.forms["bstu_student"].subject1.checked == true) info += "<li><u>ОИТ</u></li>";
+                if (document.forms["bstu_student"].subject2.checked == true) info += "<li><u>ОАИП</u></li>";
+                if (document.forms["bstu_student"].subject3.checked == true) info += "<li><u>История</u></li>";
+                if (document.forms["bstu_student"].subject4.checked == true) info += "<li><u>Физика</u></li>";
+                if (document.forms["bstu_student"].subject5.checked == true) info += "<li><u>Математика</u></li>";
+                info += "</ul>";
+                win1.document.write(info);
+                } catch(err) {
+                    alert(err);
+                }
+            }
+        </script>
+    </body>
+</html>

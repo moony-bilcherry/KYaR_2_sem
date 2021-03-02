@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <style>
+    #pic, #txta {
+        position: absolute;
+        cursor: move;
+        user-select: none;
+    }
+    </style>
+<body>
+    <textarea id="txta">aaaaaaaaaaaaaaaaaaaaaa</textarea>
+    <img id="pic" src="dev.jpg">
+    <script>
+        try {
+        dragElement(document.getElementById("pic"));
+        dragElement(document.getElementById("txta"));
+
+        function dragElement(elmnt) {
+            var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+                elmnt.onmousedown = dragMouseDown;
+
+            function dragMouseDown(e) {
+                e.preventDefault(); // метод preventDefault() объекта Event при вызове отменяет действие события по умолчанию
+                // получаем положение курсора в начале
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                document.onmouseup = closeDragElement; //движение прекращается когда юзер отпускает лкм
+                document.onmousemove = elementDrag; // вызываем функцию каждый раз когда курсор движется
+            }
+
+            function elementDrag(e) {
+                e.preventDefault();
+                // считаем новое положение курсора: отнимаем от предыдущего новое, присваиваем новое переменным
+                pos1 = pos3 - e.clientX;
+                pos2 = pos4 - e.clientY;
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                // указываем новое положение курсора: отступ - как оно изменилось
+                elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+            }
+
+            function closeDragElement() {
+                document.onmouseup = null;
+                document.onmousemove = null;
+            }
+        }
+        }
+        catch(err) {
+            alert(err);
+        }
+    </script>
+
+</body>
+</html>

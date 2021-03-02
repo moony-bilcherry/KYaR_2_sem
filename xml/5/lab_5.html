@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>xml lab 5</title>
+    </head>
+    <body>
+        <input type="file" onchange="processFiles(this.files)"><br>
+        <div>
+            Фамилия: <span id="surname"></span><br>
+            Имя: <span id="name"></span><br>
+            Отчество: <span id="lastname"></span><br>
+            Оценка: <span id="score"></span><br>
+            Год рождения: <span id="year"></span><br>
+        </div>
+        <script>
+            var xml;
+            var parser;
+            var xmlDOC;
+
+            function processFiles(files) {                              // После загрузки файла
+                var file = files[0];
+                var reader = new FileReader();                          // Читаем файл
+                reader.readAsText(file);                                // Указываем, что данный файл предназначен для чтения текста
+                reader.onload = function (e) {
+                    xml = e.target.result;
+                    parser = new DOMParser();
+                    xmlDOC = parser.parseFromString(xml, "text/xml");
+                    document.getElementById("surname").innerHTML = xmlDOC.getElementsByTagName("surname")[0].innerHTML;
+                    document.getElementById("name").innerHTML = xmlDOC.getElementsByTagName("name")[0].innerHTML;
+                    document.getElementById("lastname").innerHTML = xmlDOC.getElementsByTagName("lastName")[0].innerHTML;
+                    document.getElementById("score").innerHTML = xmlDOC.getElementsByTagName("score")[0].innerHTML;
+                    document.getElementById("year").innerHTML = xmlDOC.getElementsByTagName("bornIn")[0].innerHTML;
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>спорт</title>
+        <style>
+            img {
+                width: 370px;
+                height: 250px;
+            }
+            .caps, .zzz {
+                font-family: "Arial";
+            }
+            .zzz {
+                font-size: 24pt;
+            }
+            .caps {
+                font-size: 30pt;
+                background-color: rgb(62, 62, 179);
+                color: whitesmoke;
+                text-align: center;       
+                padding: 10px;
+                letter-spacing: 1pt;
+            }
+            .left {
+                flex-grow: 1;
+                text-align: justify;
+                background-color: rgb(238, 238, 131);
+                width: 270px;
+                font-size: 31px;
+            }
+            #main {
+                display: flex;
+                flex-wrap: wrap-reverse;
+            }
+            .left div {
+                display: flex;
+            }
+            .right {
+                flex-basis: 900px;
+                flex-grow: 3;
+            }
+            img {
+                float:left;
+                margin: 17px;
+            }
+            #foot {
+                text-align: center;
+                font-size: 30pt;
+                font-weight: bolder;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="caps">ПРИВЕТ УЧАСТНИКАМ СОРЕВНОВАНИЙ!</div>
+        <div id="main">
+            <div class="left">
+                <ul class="one">
+                    <li><a href="#">конькобежный спорт</a></li>
+                    <li><a href="#">биатлон</a></li>
+                    <li><a href="#">футбол</a></li>
+                    <li><a href="#">стрельба из лука</a></li>
+                    <li><a href="#">прыжки в длину</a></li>
+                    <li><a href="#">прыжки в высоту</a></li>
+                    <li><a href="#">фигурное катание</a></li>
+                </ul>
+            </div>
+            <div class="right">
+                <p id="foot">Футбол</p>
+                <img src="foot.jpg">
+                <p class="zzz">Футбол - командный вид спорта, в котором целью является забить мяч в ворота соперника ногами или другими частями тела (кроме рук) большее количество раз, чем команда соперника. Есть 17 официальных правил игры, каждое из которых содержит список оговорок и руководящих принципов.</p>
+            </div>
+        </div>
+        <div class="caps">ГЛАВНОЕ НЕ ПОБЕДА, А УЧАСТИЕ!</div>
+    </body>
+</html>

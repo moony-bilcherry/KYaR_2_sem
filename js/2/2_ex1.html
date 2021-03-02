@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>задание 1</title>
+        <style>
+            body {
+                background-color: rgb(173, 228, 219);
+            }
+            #output {
+                color:  #239cb8;
+                font-family: century_gothic;
+                font-size: 20pt;
+                height: 200px;
+                margin: 100px;
+                border: 3px solid rgb(27, 27, 27);
+                text-align: center;
+                background-color: white;
+                border-radius: 6px;
+                padding: 20px;
+            }
+            #input {
+               text-align: center;
+            }
+            .button {
+            background-color: rgb(95, 59, 104);
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            text-align: center;
+            display: inline-block;
+            font-size: 14pt;
+            border-radius: 6px;
+            }
+            
+        </style>
+        <script type="text/javascript">
+            function ex1_lab1() {
+                alert("Вас приветствует учебный центр");
+                x=prompt("Введите имя:", "Имя");
+                alert("Здравствуйте, "+ x);
+                choice=confirm("Хотите стать Web-дизайнером?");
+                if (choice==true) {
+                    document.getElementById('output').innerHTML = "Учите стили CSS и JavaScript!";
+                } else {
+                    document.getElementById('output').innerHTML = "Упускаете время!";
+                }
+            }
+            function ex2_lab1() {
+                document.getElementById('output').innerHTML = "10 + 5 = "+(10+5);
+                document.getElementById('output').innerHTML += "<br>\"10\" + \"5\" = "+("10"+"5");
+                document.getElementById('output').innerHTML += "<br>22 + \"5\" = "+(22+"5");
+                document.getElementById('output').innerHTML += "<br>\"22\" + 5 = "+("22"+5);
+                alert("Результатом сложения строки и числа всегда будет строка");
+            }
+            function ex3_lab1() {
+                x=prompt("Введите x:", "x");
+                y=prompt("Введите y:", "y");
+                first_eq = (35*y-25*x)/5+232;
+                second_eq = (8*y/x+5*x/y-43)*6;
+                residue = first_eq%second_eq;
+                document.getElementById('output').innerHTML = "(35*y-25*x)/5+232 = "+first_eq;
+                document.getElementById('output').innerHTML += "<br>(8*y/x+5*x/y-43)*6 = "+second_eq;
+                document.getElementById('output').innerHTML += "<br>остаток от деления первого на второе = "+residue;
+                myWindow=window.open("","","left=50,top=200,width=100,height=100");
+                myWindow.document.write(first_eq+"<br>"+second_eq+"<br>"+residue);
+                myWindow.focus();
+            }
+            function ex4_lab1() {
+                num=parseInt(prompt("Введите любое число: ", "x"));
+                if((num<20 || num>40) && (num!=15 && num%5==0)) document.getElementById('output').innerHTML = "Правильное значение";
+                else document.getElementById('output').innerHTML = "Неправильное значение" ;
+                if(num%2!=0) document.getElementById('output').innerHTML += "<br>нечетное число";
+                else if(num<20 && num%2==0) document.getElementById('output').innerHTML += "<br>число меньше 20 и четное";
+                else document.getElementById('output').innerHTML += "<br>число больше 40 и четное";
+            }
+            function ex5_lab1() {
+                num1=prompt("Введите первое число:", "x");
+                num2=prompt("Введите второе:", "y");
+                if(num1>num2) document.getElementById('output').innerHTML =num1+" > "+num2;
+                else if(num1<num2) document.getElementById('output').innerHTML =num1+" < "+num2;
+                else document.getElementById('output').innerHTML =num1+" = "+num2;
+                (num1%num2==0)?document.getElementById('output').innerHTML += "<br>первое на второе нацело делится" : document.getElementById('output').innerHTML += "<br>первое на второе нацело не делится";
+            }
+            function ex6_lab1() {
+                var d = new Date();
+                var n = d.getDay();
+                switch (n) {
+                case 0:n ="воскресенье"; break;
+                case 1:n ="понедельник"; break;
+                case 2:n ="вторник"; break;
+                case 3:n ="среда"; break;
+                case 4:n ="четверг"; break;
+                case 5:n ="пятница"; break;
+                case 6:n ="суббота"; break;
+                default:n ="неверные данные"; break;
+                }
+                document.getElementById('output').innerHTML = "сегодня "+n;
+            }
+            function ex7_lab1() {
+                try {
+                any_func();
+                } catch(err) {
+                alert(err); 
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id ="input">
+            <input type="button" class="button" value="задание 1" onclick="ex1_lab1()" />
+            <input type="button" class="button" value="задание 2" onclick="ex2_lab1()" />
+            <input type="button" class="button" value="задание 3" onclick="ex3_lab1()" />
+            <input type="button" class="button" value="задание 4" onclick="ex4_lab1()" />
+            <input type="button" class="button" value="задание 5" onclick="ex5_lab1()" />
+            <input type="button" class="button" value="задание 6" onclick="ex6_lab1()" />
+            <input type="button" class="button" value="задание 7" onclick="ex7_lab1()" />
+        </div>
+        <div id = "output">        </div>
+    </body>
+</html>

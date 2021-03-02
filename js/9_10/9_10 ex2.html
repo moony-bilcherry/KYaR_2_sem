@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>10 ex 2</title>
+        <meta charset="utf-8">
+        <style>
+            #pic {
+                position: absolute;
+            }
+        </style>
+        
+    </head>
+    <body id = "mybody">
+        <img id="pic" src="dev.jpg">
+        <script type="text/javascript">
+            var elem = document.getElementById("pic");   
+            var pos = 0;
+            var id = setInterval(frame, 3);
+            function frame() {
+                if (pos == 800) {
+                    clearInterval(id);
+                } else {
+                    pos++; 
+                    elem.style.left = pos + 'px'; 
+                }
+            }
+            
+        </script>
+    </body>
+</html>

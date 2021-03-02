@@ -1,0 +1,34 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<?xml-stylesheet type = "text/css" href = "lab_1_style.css"?>
+<!DOCTYPE speciality SYSTEM "myDTD.dtd">
+<speciality>
+
+    <university>
+        <uniName>БГУИР</uniName>
+        <passingScore>369</passingScore>
+        <recruitmentPlan>24</recruitmentPlan>
+        <city>Минск</city>
+    </university>
+
+    <university>
+        <uniName>БНТУ</uniName>
+        <passingScore>334</passingScore>
+        <recruitmentPlan>50</recruitmentPlan>
+        <city>Барановичи</city>
+    </university>
+
+    <university>
+        <uniName>ВГУ им. П. М. Машерова</uniName>
+        <passingScore>277</passingScore>
+        <recruitmentPlan>27</recruitmentPlan>
+        <city>Витебск</city>
+    </university>
+
+    <university>
+        <uniName>ГГУ им. Франциска Скорины</uniName>
+        <passingScore>321</passingScore>
+        <recruitmentPlan>27</recruitmentPlan>
+        <city>Гомель</city>
+    </university>
+
+</speciality>

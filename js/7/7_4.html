@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Document</title>
+        <meta charset="UTF-8">
+    </head>
+    <style>
+        form {
+            width: 450px;
+            margin: 0 auto;
+        }
+        textarea {
+            width:200px;
+            height:50px;
+        }
+        .text {
+            width: 200px;
+        }
+        p{
+            margin-bottom: 3px;
+        }
+    </style>
+    <script>
+        function print() {
+            let text = '<select name="cats">';
+            let elems = document.forms.cats.elements;
+            for (i = 0; i < elems.breeds.length; i++) {
+                if (elems.breeds[i].checked) {
+                    text += "<option>" + elems.breeds[i].value + "</option>";
+                }
+            }
+            text += "</select>"
+            document.getElementById("output").innerHTML = text;
+    }
+    </script>
+<body>
+    <form name="cats">
+        <fieldset>
+            <legend>Задание 4, список</legend>
+            Выберите породы котиков <br>
+            <input type="checkbox" name="breeds" value="Мейн-кун">Мейн-кун<br>
+            <input type="checkbox" name="breeds" value="Манчкин">Манчкин<br>
+            <input type="checkbox" name="breeds" value="Скотиш фолд">Скотиш фолд<br>
+            <input type="checkbox" name="breeds" value="Рэгдолл">Рэгдолл<br>
+            <input type="checkbox" name="breeds" value="Русская голубая">Русская голубая<br>
+            <input type="checkbox" name="breeds" value="Сфинкс">Сфинкс<br>
+            <input type="checkbox" name="breeds" value="Гималайская">Гималайская<br>
+            <input type="checkbox" name="breeds" value="Абиссинская">Абиссинская<br><br>
+
+            <input type="button" value="Написать список" onclick="print()">
+
+            <input type="submit" name = "submit" value = "Отправить"/>
+            <input type="reset" name = "reset" value = "Очистить"/> 
+        </fieldset>
+        <div id="output"></div>
+    </form>
+    <script>
+        
+    </script>
+</body>
+</html>

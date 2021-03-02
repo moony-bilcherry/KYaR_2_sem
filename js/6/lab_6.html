@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>лаба 6</title>
+        <meta charset="utf-8">
+            <style>
+                body {
+                    text-align: center;
+                    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                }
+
+                table {
+                    width: 80%;
+                    border-collapse: collapse;
+                    table-layout: fixed;
+                    word-wrap: break-word;
+                    margin-left: 10%;
+                }
+                
+                table td, table th {
+                    border: 2px solid #777;
+                    padding: 10px 20px;
+                    text-align: center;
+                    
+                }
+                table tr:first-child td:nth-child(1n) {
+                    background-color: rgb(21, 116, 103);
+                    color: whitesmoke;
+                    font-weight: bolder;
+                }
+                
+
+                .button {
+                    background-color: rgb(95, 59, 104);
+                    border: none;
+                    color: white;
+                    padding: 10px 15px;
+                    text-align: center;
+                    display: inline-block;
+                    font-size: 14pt;
+                    border-radius: 6px;
+                }
+
+            </style>
+            <script type="text/javascript">
+                
+                let window1;
+
+                function open_window1() {
+                    window1 = window.open("https://ru.wikipedia.org/wiki", "", "left = 200, top = 300, width = 600, height = 500");
+                }
+
+                function close_window1() {
+                    window1.close();
+                }
+
+                let win_new;
+                function open_new(){
+                    win_new = window.open("about:blank", "new window", "width = 400 height = 200");
+                }
+
+                function edit_new(){
+                    win_new.document.write("hiiii there my name is " + win_new.name);
+                }
+
+                function close_new(){
+                    win_new.close();
+                }
+
+
+                let win_new2;
+                function open_new2(){
+                    win_new2 = window.open("about:blank", "pamagite pazhalusto", "width = 500 height = 150");
+                }
+
+                function edit_new2(){
+                    win_new2.document.write("yo whaddup my name is " + win_new2.name);
+                }
+
+                function close_new2(){
+                    win_new2.close();
+                }
+
+                function task2() {
+                    let tab = "<table>";
+                    
+                    tab += "<tr><td class=value>Свойство</td><td class=property>Значение</td></tr>";
+
+                    tab += "<tr><td colspan = 2 class=object>Объект Navigator</td></tr>";
+                    tab += "<tr><td>userAgent</td><td>" + navigator.userAgent + "</td></tr>";
+                    tab += "<tr><td>appVersion</td><td>" + navigator.appVersion + "</td></tr>";
+                    tab += "<tr><td>appName</td><td>" + navigator.appName + "</td></tr>";
+                    tab += "<tr><td>appCodeName</td><td>" + navigator.appCodeName + "</td></tr>";
+                    tab += "<tr><td>platform</td><td>" + navigator.platform + "</td></tr>";
+                    tab += "<tr><td>javaEnabled()</td><td>" + navigator.javaEnabled() + "</td></tr>";
+                    
+                    tab += "<tr><td colspan = 2 class=object>Объект Screen</td></tr>";
+                    tab += "<tr><td>width</td><td>" + screen.width + "</td></tr>";
+                    tab += "<tr><td>height</td><td>" + screen.height + "</td></tr>";
+                    tab += "<tr><td>colorDepth</td><td>" + screen.colorDepth + "</td></tr>";
+                    
+                    tab += "<tr><td colspan = 2 class=object>Объект History</td></tr>";
+                    tab += "<tr><td>length</td><td>" + history.length + "</td></tr>";
+                    
+                    tab += "<tr><td colspan = 2 class=object>Объект Location</td></tr>";
+                    tab += "<tr><td>href</td><td>" + decodeURIComponent(location.href) + "</td></tr>";
+                    tab += "<tr><td>pathname</td><td>" + decodeURIComponent(location.pathname) + "</td></tr>";
+                    tab += "<tr><td>host</td><td>" + decodeURIComponent(location.host) + "</td></tr>";
+
+                    tab += "</table>";
+                    document.getElementById('ex2').innerHTML = tab;
+                }
+            </script>
+    </head>
+    <body>
+        <h1>задание 1</h1>
+        <div>
+            <input type="button" class="button" onclick="open_window1()" value="открыть википедию">
+            <input type="button" class="button" onclick="close_window1()" value="закрыть её">
+            <br> <br>
+            <input type="button" class="button" value="открыть окно 1" onclick="open_new()" />
+            <input type="button" class="button" value="ввести текст в окно 1" onclick="edit_new()" />
+            <input type="button" class="button" value="закрыть окно 1" onclick="close_new()" />
+            <br> <br>
+            <input type="button" class="button" value="открыть окно 2" onclick="open_new2()" />
+            <input type="button" class="button" value="ввести текст в окно 2" onclick="edit_new2()" />
+            <input type="button" class="button" value="закрыть окно 2" onclick="close_new2()" />
+        </div>
+        <h1>задание 2</h1>
+        <div id="ex2">
+            <input type="button" class="button" onclick="task2()" value="таблица">
+        </div>
+    </body>
+</html>

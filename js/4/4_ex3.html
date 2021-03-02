@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>задание 3</title>
+            <style>
+            
+            </style>
+            <script type="text/javascript">
+                try {
+                    fio = "Ерчинская Наталия Константиновна";
+                    var arr = ['pop', 'push', 'shift', 'slice', 'sort'];
+	                var mth = ['pow', 'round', 'floor'];
+                    document.write("Исходный массив arr: ");
+                    for(i=0;i<arr.length;i++) {
+                        document.write(arr[i]+" ");
+                    }
+                    delete arr[3];
+                    document.write("<br>Полученный массив arr: ");
+                    for(i=0;i<arr.length;i++) {
+                        document.write(arr[i]+" ");
+                    }
+                    document.write("<br>Исходный массив mth: ");
+                    for(i=0;i<mth.length;i++) {
+                        document.write(mth[i]+" ");
+                    }
+                    document.write("<br>Есть ли второй элемент в mth: ");
+                    document.write(2 in mth);
+                    //Конструктор для создания объекта Group со свойствами n, spec, amount и методом add_stud
+                    function Group(n,spec,amount) {
+                        this.n=n;
+                        this.spec=spec;
+                        this.amount=amount;
+                        this.add_stud=function add_stud(k) {
+                            this.amount+=k;
+                            
+                        }
+                        this.sub_stud=function sub_stud(k) {
+                            this.amount-=k;
+                            
+                        }
+                    }
+                    gr1=new Group(2,"ИСиТ", 28);
+                    gr1.add_stud(2); 
+                    gr1.sub_stud(5);
+                    Group.prototype.course=this.course;
+                    gr1.course=2;
+                    document.write("<br>"+gr1.n+" "+gr1.spec+" "+gr1.amount+" "+gr1.course+"<br>");
+                    document.write("Ответ gr1 instanceof Object: ");
+                    document.write(gr1 instanceof Object);
+                    document.write("<br>Ответ typeof gr1.n: ");
+                    document.write(typeof gr1.n);
+                    document.write("<br>Ответ typeof gr1.add_stud: ");
+                    document.write(typeof gr1.add_stud);
+                    document.write("<br>Ответ typeof gr1: ");
+                    document.write(typeof gr1);
+                    function i_return_5() {
+                        return 5;
+                    }
+                    function language(name, developer, first_appereance){
+                    this.Name = name;
+                    this.Developer = developer;
+                    this.Appereance = first_appereance;
+                    this.Age = function (){
+                        let today = new Date();
+                        return(today.getFullYear() - this.Appereance);
+                    }
+                    }
+                    B = new language('B','Кен Томпсон',1969)
+                    C = new language('C', 'Деннис Ритчи', 1972);
+                    Cpp = new language('C++', 'Бьерн Страуструп', 1983);
+                    Python = new language('Python', 'Гвидо ван Россум', 1991);
+                    Ada = new language('Ada','Жан ишбиа',1980);
+                    language.prototype.lastversion = this.lastversion;
+                    C.lastversion = 'C18';
+                    Cpp.lastversion = 'C++17';
+                    Python.lastversion = '3.6.10';
+                    Ada.lastversion = 'Ada 2012';
+                    B.lastversion = 'Honeywell';
+                    document.write("<br>Тип функции, возвращающей 5: ",typeof i_return_5);
+                    document.write("<br>Тип массива методов array: ",typeof arr);
+                    document.write("<br>Тип массива методов math: ",typeof mth);
+                    document.write("<br>Тип функции language: ",typeof language);
+                    document.write("<br>Тип строки с ФИО: ",typeof fio);
+                    document.write("<br>Тип функции Group: ",typeof Group);
+                    document.write("<br><br>Тип gr1: ",typeof gr1);
+                    document.write("<br>Тип gr1.spec: ",typeof gr1.spec);
+                    document.write("<br>Тип gr1.n: ",typeof gr1.n);
+                    document.write("<br>Тип gr1.course: ",typeof gr1.course);
+                    document.write("<br>Тип gr1.amount: ",typeof gr1.amount);
+                    document.write("<br>Является ли arr массивом: ", arr instanceof Array);
+                } catch(err) {
+                    alert(err);
+                }
+            </script>
+    </head>
+    <body>
+
+    </body>
+</html>

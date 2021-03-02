@@ -1,0 +1,108 @@
+<html>
+    <head>
+        <title>11 (9-10 ex 4-5 + jq)</title>
+        <style type="text/css">
+        fieldset {
+        width: 300px;
+        background-color: teal;
+        color: whitesmoke;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 18px;
+        }
+        #drawHere{
+            font-size: 30pt;
+        }
+        div{
+        position: fixed;
+        }
+
+        .button {
+            background-color: whitesmoke;
+            border: none;
+            color: rgb(95, 59, 104);
+            padding: 10px 15px;
+            text-align: center;
+            display: inline-block;
+            font-size: 14pt;
+            border-radius: 6px;
+        }
+        </style>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  
+    </head>
+
+    <body>
+        <form>
+            <fieldset>
+            <label>выберите функцию:</label><br/>
+            <input type = 'radio' name = 's' value = '1' /> y = x<sup>2</sup><br/>
+            <input type = 'radio' name = 's' value = '2' /> y = x<sup>3</sup><br/>
+            <input type = 'radio' name = 's' value = '3' /> y = sin(x)<br/>
+            <input type = 'radio' name = 's' value = '4' /> y = cos(x)<br/>
+            <label>выберите цвет:</label>
+                <select id="myselect" name = "choice">
+                    <option value = '1'>красный</option>
+                    <option value = '2'>оранжевый</option>
+                    <option value = '3'>желтый</option>
+                    <option value = '4'>зеленый</option>
+                    <option value = '5'>синий</option>
+                    <option value = '6'>фиолетовый</option>
+                    <option value = '7'>черный</option>
+                </select>
+               <br/><br/><input id = "build" type = "button" class ="button" value = "построить">
+            </fieldset>
+        </form>
+        <div id="drawHere">
+        </div>
+        <script type="text/javascript">
+
+            var w , h, x0, y0;
+            w = screen.width;
+            h = screen.height;
+            x0 = w/2-300; 
+            y0 = h/2; 
+
+            $("#build").click(function(){
+                $("#drawHere").empty();
+                $("#drawHere").append("<div id='first'></div>");
+                console.log(color());
+                animDuration = 3000;
+                $("#first").animate({
+                    now: '+=10'},{
+                    duration:animDuration,
+                    step: function(now, fx) {
+                    fx = y0 - which_one(now-5)*20;
+                    now = 20*now+x0;
+                    $("#drawHere").append("<div class='step'>"+"."+"</div>");
+                    $(".step").css("color",color());        
+                    $(".step:last").offset({top: fx,left:now });        
+                }
+                });
+            });
+
+            function which_one(now) {
+                var f = parseInt($('input[name="s"]:checked').val());
+                switch(f) {
+                    case 1: return yexpr=now*now/2; break;
+                    case 2: return yexpr=now*now*now/10; break;
+                    case 3: return yexpr=Math.sin(now)*2; break;
+                    case 4: return yexpr=Math.cos(now)*2; break;
+                    default: alert("вы не указали функцию!"); break;
+                }
+            }
+
+            function color() {
+                var color = parseInt($("#myselect").val());
+                switch(color) {
+                    case 1: return "red"; break;
+                    case 2: return "orange"; break;
+                    case 3: return "yellow"; break;
+                    case 4: return "green"; break;
+                    case 5: return "blue"; break;
+                    case 6: return "purple"; break;
+                    default: return "black"; break;
+                }
+            }
+
+        </script>
+    </body>
+</html>

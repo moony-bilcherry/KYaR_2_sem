@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>задание 3</title>
+        <script type="text/javascript">
+            x=prompt("Введите x:", "x");
+            y=prompt("Введите y:", "y");
+            first_eq = (35*y-25*x)/5+232;
+            second_eq = (8*y/x+5*x/y-43)*6;
+            residue = first_eq%second_eq;
+            document.write("(35*y-25*x)/5+232 = ", first_eq);
+            document.write("<br>(8*y/x+5*x/y-43)*6 = ", second_eq);
+            document.write("<br>остаток от деления первого на второе = ", residue);
+            myWindow=window.open("","","left=50,top=200,width=100,height=100");
+            myWindow.document.write(first_eq+"<br>"+second_eq+"<br>"+residue);
+            myWindow.focus();
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

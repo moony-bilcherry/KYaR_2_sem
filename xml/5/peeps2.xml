@@ -1,0 +1,18 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<people>
+    <person>
+        <surname>свергун</surname>
+        <name>сергей</name>
+        <lastName>владимирович</lastName>
+        <score>5</score>
+        <bornIn>1987</bornIn>
+    </person>
+    <person>
+        <surname>дмитрий</surname>
+        <name>микалс</name>
+        <lastName>васильевич</lastName>
+        <score>9</score>
+        <bornIn>1999</bornIn>
+    </person>
+</people>
